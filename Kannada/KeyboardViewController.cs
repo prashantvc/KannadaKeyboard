@@ -30,18 +30,9 @@ namespace Kannada
 		{
 			base.ViewDidLoad ();
 
-			InitialiseKeyboard ();
-
-//			var buttonTitles = new[] { "ಪ", "್", "ರ", "ಶ", "ಾ", "ಂ", "ತ" };
-//			buttons = CreateButtons (buttonTitles);
-//			var topRow = new UIView (CGRect.FromLTRB (0, 0, 320, 40));
-//
-//			topRow.AddSubviews (buttons);
-//			View.AddSubview (topRow);
-//
-			//	AddConstraints (buttons, topRow);
-
-			// Perform custom UI setup here
+			var nib = UINib.FromName ("KeyboardView", null); //UINib("KeyboardView", bundle: nil)
+			var objects = nib.Instantiate (this, null);
+			View = objects [0] as UIView;
 			nextKeyboardButton = new UIButton (UIButtonType.System);
 
 			nextKeyboardButton.SetTitle ("Next Keyboard", UIControlState.Normal);
