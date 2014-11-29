@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KannadaKeyboard", "KannadaKeyboard\KannadaKeyboard.csproj", "{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kannada", "Kannada\Kannada.csproj", "{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Debug|iPhone.Build.0 = Debug|iPhone
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Release|iPhone.ActiveCfg = Release|iPhone
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Release|iPhone.Build.0 = Release|iPhone
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Debug|iPhone.Build.0 = Debug|iPhone
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Release|iPhone.ActiveCfg = Release|iPhone
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Release|iPhone.Build.0 = Release|iPhone
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = KannadaKeyboard\KannadaKeyboard.csproj
+	EndGlobalSection
+EndGlobal
