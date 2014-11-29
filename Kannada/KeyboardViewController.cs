@@ -24,11 +24,13 @@ namespace Kannada
 			// Add custom view sizing constraints here
 		}
 
-		UIButton[] buttons;
+		//UIButton[] buttons;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			InitialiseKeyboard ();
 
 //			var buttonTitles = new[] { "ಪ", "್", "ರ", "ಶ", "ಾ", "ಂ", "ತ" };
 //			buttons = CreateButtons (buttonTitles);
@@ -37,13 +39,7 @@ namespace Kannada
 //			topRow.AddSubviews (buttons);
 //			View.AddSubview (topRow);
 //
-		//	AddConstraints (buttons, topRow);
-
-
-
-			var nib = UINib.FromName ("KeyboardView", null); //UINib("KeyboardView", bundle: nil)
-			var objects = nib.Instantiate (this, null);
-			View = objects [0] as UIView;
+			//	AddConstraints (buttons, topRow);
 
 			// Perform custom UI setup here
 			nextKeyboardButton = new UIButton (UIButtonType.System);
@@ -64,17 +60,21 @@ namespace Kannada
 			});
 		}
 
+
+
+
 		UIButton[] CreateButtons (string[] buttonTitles)
 		{
-
 			var buttonList = new List<UIButton> ();
 			foreach (var title in buttonTitles) {
+
+
 				var button = UIButton.FromType (UIButtonType.System);
 				button.SetTitle (title, UIControlState.Normal);
 				button.TranslatesAutoresizingMaskIntoConstraints = false;
 				button.BackgroundColor = UIColor.White;
 				button.SetTitleColor (UIColor.DarkGray, UIControlState.Normal);
-				button.AddTarget (ButtonPressed, UIControlEvent.TouchUpInside);
+				//button.AddTarget (ButtonPressed, UIControlEvent.TouchUpInside);
 				buttonList.Add (button);
 			}
 
@@ -92,7 +92,7 @@ namespace Kannada
 			}
 		}
 
-		void AddConstraints (UIButton[] keys, UIView containingView)
+		void AddConstraints (UIView[] keys, UIView containingView)
 		{
 			for (int i = 0; i < keys.Length; i++) {
 
@@ -138,6 +138,50 @@ namespace Kannada
 			}
 
 			nextKeyboardButton.SetTitleColor (textColor, UIControlState.Normal);
+		}
+
+		string[][] keyArray;
+
+		void InitialiseKeyboard ()
+		{
+			keyArray = new [] {
+				new[]{ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-" },
+				new[]{ "ೌ", "ೈ", "ಾ", "ೀ", "ೂ", "ಬ", "ಹ", "ಗ", "ದ", "ಜ", "ಡ" },
+				new[]{ "ೋ", "ೇ", "್", "ಿ", "ು", "ಪ", "ರ", "ಕ", "ತ", "ಚ", "ಟ" },
+				new []{ "s", "ೆ", "ಂ", "ಮ", "ನ", "ವ", "ಲ", "ಸ", "ಯ", "ೃ", "b" }
+			};
+
+			var rows = new List<UIView> ();
+			var mainView = new UIView (CGRect.FromLTRB (0, 0, 320, 214));
+			for (int i = 0; i < keyArray.Length; i++) {
+
+				var buttons = CreateButtons (keyArray [i]);
+				var rect = CGRect.FromLTRB (0, i * 40, 320, 40);
+				Console.WriteLine (rect);
+				var topRow = new UIView (rect);
+				topRow.AddSubviews (buttons);
+				AddConstraints (buttons, topRow);
+
+				rows.Add (topRow);
+				mainView.AddSubview (topRow);
+			}
+
+			for (int i = 0; i < 4; i++) {
+
+			}
+
+			View.AddSubview (mainView);
+
+			//			var buttonTitles = new[] { "ಪ", "್", "ರ", "ಶ", "ಾ", "ಂ", "ತ" };
+			//			buttons = CreateButtons (buttonTitles);
+			//			var topRow = new UIView (CGRect.FromLTRB (0, 0, 320, 40));
+			//
+			//			topRow.AddSubviews (buttons);
+			//			View.AddSubview (topRow);
+			//
+			//	AddConstraints (buttons, topRow);
+
+
 		}
 	}
 }
