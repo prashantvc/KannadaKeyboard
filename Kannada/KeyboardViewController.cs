@@ -11,6 +11,21 @@ namespace Kannada
 		{
 		}
 
+		void UpdateKeyboardLayout ()
+		{
+			if (isShiftPressed) {
+				SetKeyTitle (Row1, row1titles);
+				SetKeyTitle (Row2, row2titles);
+				SetKeyTitle (Row3, row3titles);
+			}
+			else {
+				SetKeyTitle (Row1, normalRow1);
+				SetKeyTitle (Row2, normalRow2);
+				SetKeyTitle (Row3, normalRow3);
+			}
+			SetRemainging ();
+		}
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -21,16 +36,7 @@ namespace Kannada
 
 			Shift.TouchUpInside += ( sender, e) => {
 				UpdateShiftText (!isShiftPressed);
-				if (isShiftPressed) {
-					SetKeyTitle (Row2, row2titles);
-					SetKeyTitle (Row3, row3titles);
-					//SetKeyTitle(Row4, row4titles);
-				} else {
-					SetKeyTitle (Row2, normalRow2);
-					SetKeyTitle (Row3, normalRow3);
-				}
-
-				SetRemainging ();
+				UpdateKeyboardLayout ();
 			};
 		}
 
@@ -87,6 +93,11 @@ namespace Kannada
 
 			if (!string.IsNullOrEmpty (text)) {
 				TextDocumentProxy.InsertText (text);
+
+				if (isShiftPressed) {
+					UpdateShiftText(false);
+					UpdateKeyboardLayout();
+				}
 			}
 
 		}
@@ -104,12 +115,12 @@ namespace Kannada
 		bool isShiftPressed;
 		bool isCapsLocked;
 
-		string[] row1titles = { "", "್ರ", "ರ್", "ಜ್ಞ್ರ", "ತ್ರ", "ಕ್ಷ", "ಶ್ರ", "(", ")", "ಃ", "ಋ" };
+		string[] row1titles = { "#", "್ರ", "ರ್", "ಜ್ಞ", "ತ್ರ", "ಕ್ಷ", "ಶ್ರ", "(", ")", "ಃ", "ಋ" };
 		string[] row2titles = { "ಔ", "ಐ", "ಆ", "ಈ", "ಊ", "ಭ", "ಙ", "ಘ", "ಧ", "ಝ", "ಢ" };
 		string[] row3titles = { "ಓ", "ಏ", "ಅ", "ಇ", "ಉ", "ಫ", "ಱ", "ಖ", "ಥ", "ಛ", "ಠ" };
-		string[] row4titles = { "", "ಎ", "ಣ", "ಞ", "", "ಳ", "ಶ", "ಷ", "ಒ", "ೣ", "ೢ" };
+		string[] row4titles = { "", "ಎ", "ಣ", "ಞ", "ೢ", "ಳ", "ಶ", "ಷ", "ಒ", "ೣ", "" };
 
-		string[] normalRow1 = { "೧", "೨", "೩", "೪", "೫", "೬", "೭", "೮", "೯", "೦", "ೄ" };
+		string[] normalRow1 = { "೧", "೨", "೩", "೪", "೫", "೬", "೭", "೮", "೯", "೦", "-" };
 		string[] normalRow2 =	{ "ೌ", "ೈ", "ಾ", "ೀ", "ೂ", "ಬ", "ಹ", "ಗ", "ದ", "ಜ", "ಡ" };
 		string[] normalRow3 = { "ೋ", "ೇ", "್", "ಿ", "ು", "ಪ", "ರ", "ಕ", "ತ", "ಚ", "ಟ" };
 		string[] normalRow4 = { "s", "ೆ", "ಂ", "ಮ", "ನ", "ವ", "ಲ", "ಸ", "ಯ", "ೃ", "b" };

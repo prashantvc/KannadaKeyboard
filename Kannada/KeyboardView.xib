@@ -33,6 +33,9 @@
                                     <state key="normal" title="೧">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="uo3-yi-aRB"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuu-2D-4rz">
                                     <rect key="frame" x="29" y="0.0" width="29" height="40"/>
@@ -42,6 +45,9 @@
                                     <state key="normal" title="೨">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="5J7-9x-hwN"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crn-sn-Uc6">
                                     <rect key="frame" x="58" y="0.0" width="29" height="40"/>
@@ -51,6 +57,9 @@
                                     <state key="normal" title="೩">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="0Ga-Mf-3Ko"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7o-hK-XXQ">
                                     <rect key="frame" x="87" y="0.0" width="29" height="40"/>
@@ -60,6 +69,9 @@
                                     <state key="normal" title="೪">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="cDv-wU-mFj"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3B-Jb-Pdt">
                                     <rect key="frame" x="116" y="0.0" width="29" height="40"/>
@@ -69,6 +81,9 @@
                                     <state key="normal" title="೫">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="gnc-fa-ECq"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhj-FR-hjd">
                                     <rect key="frame" x="145" y="0.0" width="30" height="40"/>
@@ -78,6 +93,9 @@
                                     <state key="normal" title="೬">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="6VF-Vt-UPf"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udK-z6-QXa">
                                     <rect key="frame" x="175" y="0.0" width="29" height="40"/>
@@ -87,6 +105,9 @@
                                     <state key="normal" title="೭">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="RJ0-TX-zch"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fap-fA-ftL">
                                     <rect key="frame" x="204" y="0.0" width="29" height="40"/>
@@ -96,6 +117,9 @@
                                     <state key="normal" title="೮">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="map-fV-Ca5"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cG-cO-mrm">
                                     <rect key="frame" x="233" y="0.0" width="29" height="40"/>
@@ -105,6 +129,9 @@
                                     <state key="normal" title="೯">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="UbZ-w9-Z0B"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmR-4N-JcQ">
                                     <rect key="frame" x="262" y="0.0" width="29" height="40"/>
@@ -114,6 +141,9 @@
                                     <state key="normal" title="೦">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="oAa-zD-TRz"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSr-Ah-UGH">
                                     <rect key="frame" x="291" y="0.0" width="29" height="40"/>
@@ -123,6 +153,9 @@
                                     <state key="normal" title="-">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="jTS-YT-xjV"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -834,7 +867,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="dOu-2S-7PB" firstAttribute="top" secondItem="hly-mI-cqE" secondAttribute="bottom" constant="3" id="4rq-NP-jW4"/>
                         <constraint firstItem="dOu-2S-7PB" firstAttribute="leading" secondItem="hly-mI-cqE" secondAttribute="leading" id="8ou-FH-0we"/>

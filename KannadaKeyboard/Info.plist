@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>KannadaKeyboard</string>
+	<string>Kannada Kilimani</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.prashantvc.KannadaKeyboard</string>
 	<key>CFBundleShortVersionString</key>
@@ -17,6 +17,7 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
+		<integer>2</integer>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
