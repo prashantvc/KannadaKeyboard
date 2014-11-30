@@ -215,8 +215,8 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="msz-N2-uuP"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as2-r9-1KH">
-                                    <rect key="frame" x="58" y="1" width="29.5" height="39"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as2-r9-1KH">
+                                    <rect key="frame" x="58" y="1" width="30" height="39"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="rNr-7j-LJQ"/>
                                     </constraints>
@@ -251,7 +251,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="WLr-u5-WTa"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5U-sh-iFc">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5U-sh-iFc">
                                     <rect key="frame" x="145" y="0.0" width="29" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="xk6-WS-zdf"/>
@@ -263,7 +263,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="BQ5-PB-hmf"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omv-bo-i3q">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omv-bo-i3q">
                                     <rect key="frame" x="174" y="0.0" width="29" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="Scu-jz-ccC"/>
@@ -275,7 +275,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="Rdg-dP-IDK"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1t-qB-oHJ">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1t-qB-oHJ">
                                     <rect key="frame" x="203" y="0.0" width="29" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="wSa-Ks-Abt"/>
@@ -287,8 +287,8 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="gnH-nu-9LI"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDM-zN-uem">
-                                    <rect key="frame" x="232" y="0.0" width="29.5" height="40"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDM-zN-uem">
+                                    <rect key="frame" x="232" y="0.0" width="30" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="cCA-0g-8EO"/>
                                     </constraints>
@@ -401,8 +401,8 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="3Be-0O-fM9"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXe-Tb-BSC">
-                                    <rect key="frame" x="58" y="0.0" width="29.5" height="40"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXe-Tb-BSC">
+                                    <rect key="frame" x="58" y="0.0" width="30" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="aOg-Ik-fVU"/>
                                     </constraints>
@@ -437,7 +437,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="LQI-NB-pqK"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzx-1D-51M">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzx-1D-51M">
                                     <rect key="frame" x="145" y="0.0" width="29" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="1Bn-bR-iPc"/>
@@ -449,7 +449,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="xe2-Ml-bJl"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbI-h9-Qnr">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbI-h9-Qnr">
                                     <rect key="frame" x="174" y="0.0" width="29" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="n9a-hi-bmS"/>
@@ -461,7 +461,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="A9g-Yh-fO4"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yp-Kh-ILf">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yp-Kh-ILf">
                                     <rect key="frame" x="203" y="0.0" width="29" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="RKe-Kz-LJl"/>
@@ -473,8 +473,8 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="4bT-nD-LAl"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijd-2X-frj">
-                                    <rect key="frame" x="232" y="0.0" width="29.5" height="40"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ijd-2X-frj">
+                                    <rect key="frame" x="232" y="0.0" width="30" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="8sO-IE-Gf6"/>
                                     </constraints>
@@ -584,7 +584,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="Ew6-5s-keV"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fri-Ge-ndy">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fri-Ge-ndy">
                                     <rect key="frame" x="58" y="0.0" width="30" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="Kcx-cJ-SaU"/>
@@ -620,7 +620,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="J0H-yw-Ojd"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHr-1f-Hyu">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHr-1f-Hyu">
                                     <rect key="frame" x="145" y="0.0" width="29" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="joD-6J-Lik"/>
@@ -632,7 +632,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="Ija-dD-AHj"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lv-SC-ycG">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lv-SC-ycG">
                                     <rect key="frame" x="174" y="0.0" width="29" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="wKu-ES-Vin"/>
@@ -656,7 +656,7 @@
                                         <action selector="KeyPress:" destination="-1" eventType="touchUpInside" id="ErV-lb-8Y3"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP7-fk-Jlz">
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OP7-fk-Jlz">
                                     <rect key="frame" x="232" y="0.0" width="30" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="26" id="cai-Xd-ud7"/>
@@ -879,13 +879,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="351" y="452"/>
         </view>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9cs-RS-ur9">
-            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="1">
-                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-            </state>
-        </button>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
