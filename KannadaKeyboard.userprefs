@@ -2,13 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Prashant’s iPhone" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Kannada/KeyboardViewController.cs">
     <Files>
-      <File FileName="Kannada/KeyboardViewController.cs" Line="5" Column="5" />
+      <File FileName="Kannada/KeyboardViewController.cs" Line="3" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/prashantvc/Work/KannadaKeyboard/Kannada/KeyboardViewController.cs" line="30" column="1" />
-      <Breakpoint file="/Users/prashantvc/Work/KannadaKeyboard/Kannada/KeyboardViewController.cs" line="145" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
