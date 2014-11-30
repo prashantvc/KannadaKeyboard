@@ -30,7 +30,7 @@ namespace Kannada
 					SetKeyTitle (Row3, normalRow3);
 				}
 
-				SetRemainging();
+				SetRemainging ();
 			};
 		}
 
@@ -104,12 +104,12 @@ namespace Kannada
 		bool isShiftPressed;
 		bool isCapsLocked;
 
+		string[] row1titles = { "", "್ರ", "ರ್", "ಜ್ಞ್ರ", "ತ್ರ", "ಕ್ಷ", "ಶ್ರ", "(", ")", "ಃ", "ಋ" };
 		string[] row2titles = { "ಔ", "ಐ", "ಆ", "ಈ", "ಊ", "ಭ", "ಙ", "ಘ", "ಧ", "ಝ", "ಢ" };
 		string[] row3titles = { "ಓ", "ಏ", "ಅ", "ಇ", "ಉ", "ಫ", "ಱ", "ಖ", "ಥ", "ಛ", "ಠ" };
-		string[] row4titles = { "", "ಎ", "ಣ", "ಞ", "", "ಳ", "ಶ", "ಷ", "ಒ", "", "" };
+		string[] row4titles = { "", "ಎ", "ಣ", "ಞ", "", "ಳ", "ಶ", "ಷ", "ಒ", "ೣ", "ೢ" };
 
-
-		string[] normalRow1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-" };
+		string[] normalRow1 = { "೧", "೨", "೩", "೪", "೫", "೬", "೭", "೮", "೯", "೦", "ೄ" };
 		string[] normalRow2 =	{ "ೌ", "ೈ", "ಾ", "ೀ", "ೂ", "ಬ", "ಹ", "ಗ", "ದ", "ಜ", "ಡ" };
 		string[] normalRow3 = { "ೋ", "ೇ", "್", "ಿ", "ು", "ಪ", "ರ", "ಕ", "ತ", "ಚ", "ಟ" };
 		string[] normalRow4 = { "s", "ೆ", "ಂ", "ಮ", "ನ", "ವ", "ಲ", "ಸ", "ಯ", "ೃ", "b" };
