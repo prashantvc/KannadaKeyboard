@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
         <!--Kannada Keyboard View Controller-->
@@ -16,29 +16,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Enable Kannada Keyboard" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="14">
-                                <rect key="frame" x="20" y="67" width="280" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Go to Settings &gt; General &gt; Keyboard &gt; Keyboards &gt; Add New Keyboard and Tap Kannada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="18">
-                                <rect key="frame" x="20" y="112" width="280" height="111"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="ಕನ್ನಡ ಬಳಸಲು..." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                                <rect key="frame" x="20" y="96" width="280" height="27"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enable Kannada Keyboard" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="14">
+                                <rect key="frame" x="20" y="80" width="280" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="38"/>
+                                    <constraint firstAttribute="height" constant="21" id="39"/>
+                                </constraints>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Go to Settings &gt; General &gt; Keyboard &gt; Keyboards &gt; Add New Keyboard and Tap Kannada" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="18">
+                                <rect key="frame" x="20" y="168" width="280" height="111"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint firstItem="18" firstAttribute="height" constant="111" id="51"/>
+                                    <constraint firstItem="18" firstAttribute="width" constant="280" id="52"/>
+                                </constraints>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ಕನ್ನಡ ಬಳಸಲು..." textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="22">
+                                <rect key="frame" x="20" y="121" width="280" height="27"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <constraints>
+                                    <constraint firstItem="22" firstAttribute="width" constant="280" id="47"/>
+                                    <constraint firstItem="22" firstAttribute="height" constant="27" id="48"/>
+                                </constraints>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint id="42" firstItem="kh9-bI-dsS" firstAttribute="trailing" secondItem="14" secondAttribute="trailing" constant="20"/>
+                            <constraint id="43" firstItem="14" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="80"/>
+                            <constraint firstItem="14" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="44"/>
+                            <constraint firstItem="22" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="45"/>
+                            <constraint firstItem="kh9-bI-dsS" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" constant="20" id="46"/>
+                            <constraint firstItem="22" firstAttribute="top" secondItem="14" secondAttribute="bottom" constant="20" id="49"/>
+                            <constraint firstItem="18" firstAttribute="top" secondItem="22" secondAttribute="bottom" constant="20" id="50"/>
+                            <constraint firstItem="kh9-bI-dsS" firstAttribute="trailing" secondItem="18" secondAttribute="trailing" constant="20" id="53"/>
+                            <constraint firstItem="18" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="54"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="MyTextField" destination="kh9-bI-dsS" id="name-outlet-kh9-bI-dsS"/>
@@ -48,9 +71,11 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Default-568h.png" width="640" height="1136"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedOrientationMetrics key="orientation"/>
     </simulatedMetricsContainer>
 </document>
