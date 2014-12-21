@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Kannada Kilimani</string>
+	<string>Kilimani</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.prashantvc.KannadaKeyboard</string>
 	<key>CFBundleShortVersionString</key>

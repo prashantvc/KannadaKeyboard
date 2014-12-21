@@ -2,6 +2,7 @@
 
 using Foundation;
 using UIKit;
+using CoreGraphics;
 
 namespace Kannada
 {
@@ -17,8 +18,7 @@ namespace Kannada
 				SetKeyTitle (Row1, row1titles);
 				SetKeyTitle (Row2, row2titles);
 				SetKeyTitle (Row3, row3titles);
-			}
-			else {
+			} else {
 				SetKeyTitle (Row1, normalRow1);
 				SetKeyTitle (Row2, normalRow2);
 				SetKeyTitle (Row3, normalRow3);
@@ -62,7 +62,8 @@ namespace Kannada
 		void UpdateShiftText (bool ispressed)
 		{
 			isShiftPressed = ispressed;
-			Shift.SetTitle (ispressed ? "S" : "s", UIControlState.Normal);
+			//Shift.SetTitle (ispressed ? "S" : "s", UIControlState.Normal);
+			Shift.BackgroundColor = ispressed ? UIColor.GroupTableViewBackgroundColor : UIColor.White;
 		}
 
 		partial void ChangeKeyboardPressed (NSObject sender)
@@ -95,11 +96,25 @@ namespace Kannada
 				TextDocumentProxy.InsertText (text);
 
 				if (isShiftPressed) {
-					UpdateShiftText(false);
-					UpdateKeyboardLayout();
+					UpdateShiftText (false);
+					UpdateKeyboardLayout ();
 				}
 			}
+			 
 
+//			UIView.animateWithDuration(0.2, animations: {
+//				button.transform = CGAffineTransformScale(CGAffineTransformIdentity, 2.0, 2.0)
+//			}, completion: {(_) -&gt; Void in
+//				button.transform =
+//					CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
+//				})
+
+
+			UIView.Animate (0.2, () => {
+				button.Transform = CGAffineTransform.Scale(CGAffineTransform.MakeIdentity(), 2f, 2f);
+			}, () => {
+				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity(), (nfloat)1f, (nfloat)1f);
+			});
 		}
 
 		public override void TextWillChange (NSObject textInput)
@@ -113,7 +128,6 @@ namespace Kannada
 		}
 
 		bool isShiftPressed;
-		bool isCapsLocked;
 
 		string[] row1titles = { "#", "್ರ", "ರ್", "ಜ್ಞ", "ತ್ರ", "ಕ್ಷ", "ಶ್ರ", "(", ")", "ಃ", "ಋ" };
 		string[] row2titles = { "ಔ", "ಐ", "ಆ", "ಈ", "ಊ", "ಭ", "ಙ", "ಘ", "ಧ", "ಝ", "ಢ" };

@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KeyboardViewController.cs" />
@@ -108,5 +109,8 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.AppExtension.CSharp.targets" />
   <ItemGroup>
     <InterfaceDefinition Include="KeyboardView.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Globe40.png" />
   </ItemGroup>
 </Project>
