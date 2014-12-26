@@ -39,6 +39,9 @@ namespace Kannada
 		[Action ("KeyPress:")]
 		partial void KeyPress (Foundation.NSObject sender);
 
+		[Action ("PhonaticKeyPress:")]
+		partial void PhonaticKeyPress (Foundation.NSObject sender);
+
 		[Action ("ReturnPressed:")]
 		partial void ReturnPressed (Foundation.NSObject sender);
 

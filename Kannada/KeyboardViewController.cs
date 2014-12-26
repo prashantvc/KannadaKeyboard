@@ -26,18 +26,24 @@ namespace Kannada
 			SetRemainging ();
 		}
 
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			var nib = UINib.FromName ("KeyboardView", null); //UINib("KeyboardView", bundle: nil)
+			var nib = UINib.FromName ("KanndaPhoneticView", null); //UINib("KeyboardView", bundle: nil)
 			var objects = nib.Instantiate (this, null);
 			View = objects [0] as UIView;
 
-			Shift.TouchUpInside += ( sender, e) => {
-				UpdateShiftText (!isShiftPressed);
-				UpdateKeyboardLayout ();
-			};
+			parser = new PhoneticParser ();
+			Console.WriteLine (parser);
+
+			if (Shift != null) {
+				Shift.TouchUpInside += ( sender, e) => {
+					UpdateShiftText (!isShiftPressed);
+					UpdateKeyboardLayout ();
+				};
+			}
 		}
 
 		void SetRemainging ()
@@ -47,7 +53,6 @@ namespace Kannada
 				var button = Row4.Subviews [i] as UIButton;
 				button.SetTitle (title [i], UIControlState.Normal);
 			}
-			
 		}
 
 		void SetKeyTitle (UIView row, string[] titles)
@@ -74,16 +79,41 @@ namespace Kannada
 		partial void BackspacePressed (NSObject sender)
 		{
 			TextDocumentProxy.DeleteBackward ();
+			if (parser != null) {
+				parser.ResetConsonantFlag();
+			}
 		}
 
 		partial void ReturnPressed (NSObject sender)
 		{
 			TextDocumentProxy.InsertText ("\n");
+			if (parser != null) {
+				parser.PreviousConsonantFlag = 0;
+			}
 		}
 
 		partial void SpacePressed (NSObject sender)
 		{
 			TextDocumentProxy.InsertText (" ");
+			if (parser != null) {
+				parser.PreviousConsonantFlag = 0;
+			}
+		}
+
+		partial void PhonaticKeyPress (NSObject sender)
+		{
+			var button = sender as UIButton;
+			var text = button.Title (UIControlState.Normal);
+			var unicode = parser.GetPattern (text);
+			Console.WriteLine (unicode);
+			for (int i = 0; i < unicode.DeletePosition; i++) {
+				TextDocumentProxy.DeleteBackward ();
+			}
+			if (parser.AFlag) {
+				parser.AFlag = false;
+				return;
+			}
+			TextDocumentProxy.InsertText (unicode.Char);
 		}
 
 		partial void KeyPress (NSObject sender)
@@ -111,9 +141,9 @@ namespace Kannada
 
 
 			UIView.Animate (0.2, () => {
-				button.Transform = CGAffineTransform.Scale(CGAffineTransform.MakeIdentity(), 2f, 2f);
+				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), 2f, 2f);
 			}, () => {
-				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity(), (nfloat)1f, (nfloat)1f);
+				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), (nfloat)1f, (nfloat)1f);
 			});
 		}
 
@@ -127,6 +157,7 @@ namespace Kannada
 			// 
 		}
 
+		PhoneticParser parser;
 		bool isShiftPressed;
 
 		string[] row1titles = { "#", "್ರ", "ರ್", "ಜ್ಞ", "ತ್ರ", "ಕ್ಷ", "ಶ್ರ", "(", ")", "ಃ", "ಋ" };
