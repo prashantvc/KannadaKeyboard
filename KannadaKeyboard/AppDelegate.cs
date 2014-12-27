@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-
+﻿
 using Foundation;
 using UIKit;
+using MonoTouch.Dialog;
 
 namespace KannadaKeyboard
 {
@@ -15,33 +13,72 @@ namespace KannadaKeyboard
 	{
 		// class-level declarations
 		
-		public override UIWindow Window {
-			get;
-			set;
+		UINavigationController navigation;
+		UIWindow window;
+
+		MyRadioElement inscript;
+		MyRadioElement phonetic;
+		NSUserDefaults defaults;
+
+		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
+		{
+			defaults = new NSUserDefaults ("group.prashantvc.KannadaKeyboard", NSUserDefaultsType.SuiteName);
+			var dictionary = NSDictionary.FromObjectsAndKeys (new object[]{ false }, new object[]{ "use_phonetic" });
+			defaults.RegisterDefaults (dictionary);
+			defaults.Synchronize ();
+			var section = new Section ("Keyboard Type");
+
+			var root = new RootElement ("ಕಿಲೀಮಣಿ ") { 
+				new Section ("To Enable Keyboard") {
+					new MultilineElement ("Go to Settings > General > \nKeyboard > Keyboards > \nAdd New Keyboard and Tap Kannada")
+				},
+				section,
+				new Section {
+					new HtmlElement ("Privacy Policy", "http://prashantvc.com/private_policy.html")
+				}
+			};
+
+			inscript = new MyRadioElement ("Inscript", "type", defaults);
+			phonetic = new MyRadioElement ("Phonetic (ಫೊನೆಟಿಕ್)", "type", defaults);
+
+			section.Add (new RootElement ("Type", new RadioGroup ("type", 0)) {
+				new Section {
+					inscript,
+					phonetic
+				}
+			});
+
+			var dv = new DialogViewController (root) {
+				Autorotate = true
+			};
+			navigation = new UINavigationController ();
+			navigation.PushViewController (dv, true);				
+
+			window = new UIWindow (UIScreen.MainScreen.Bounds);
+			window.MakeKeyAndVisible ();
+			window.AddSubview (navigation.View);
+
+			return true;
 		}
 		
-		// This method is invoked when the application is about to move from active to inactive state.
-		// OpenGL applications should use this method to pause.
-		public override void OnResignActivation (UIApplication application)
+
+	}
+
+	public class MyRadioElement:RadioElement
+	{
+		readonly NSUserDefaults defaults;
+
+		public MyRadioElement (string caption, string group, NSUserDefaults defaults) : base (caption, group)
 		{
+			this.defaults = defaults;
 		}
-		
-		// This method should be used to release shared resources and it should store the application state.
-		// If your application supports background exection this method is called instead of WillTerminate
-		// when the user quits.
-		public override void DidEnterBackground (UIApplication application)
+
+		public override void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath indexPath)
 		{
-		}
-		
-		// This method is called as part of the transiton from background to active state.
-		public override void WillEnterForeground (UIApplication application)
-		{
-		}
-		
-		// This method is called when the application is about to terminate. Save data, if needed.
-		public override void WillTerminate (UIApplication application)
-		{
+			base.Selected (dvc, tableView, indexPath);
+			defaults.SetBool (indexPath.Row == 1, "use_phonetic");
 		}
 	}
+
 }
 

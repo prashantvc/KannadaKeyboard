@@ -4,5 +4,9 @@
 <dict>
 	<key>application-identifier</key>
 	<string>XSM9QT73SA.com.prashantvc.KannadaKeyboard.Kannada</string>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.prashantvc.KannadaKeyboard</string>
+	</array>
 </dict>
 </plist>

@@ -12,6 +12,7 @@ namespace Kannada
 		{
 		}
 
+	
 		void UpdateKeyboardLayout ()
 		{
 			if (isShiftPressed) {
@@ -26,22 +27,33 @@ namespace Kannada
 			SetRemainging ();
 		}
 
+		bool IsPhoneticEnabled{ get; set; }
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			var nib = UINib.FromName ("KanndaPhoneticView", null); //UINib("KeyboardView", bundle: nil)
+			var defaults = new NSUserDefaults ("group.prashantvc.KannadaKeyboard", NSUserDefaultsType.SuiteName);
+			var obj = (NSNumber)defaults.ValueForKey (new NSString ("use_phonetic"));
+			IsPhoneticEnabled = (bool)obj;
+
+			Console.WriteLine ("Is phonetic: {0}", IsPhoneticEnabled);
+
+			var nibfile = IsPhoneticEnabled ? "KanndaPhoneticView" : "KeyboardView";
+			var nib = UINib.FromName (nibfile, null); //UINib("KeyboardView", bundle: nil)
 			var objects = nib.Instantiate (this, null);
 			View = objects [0] as UIView;
 
-			parser = new PhoneticParser ();
-			Console.WriteLine (parser);
+			if (IsPhoneticEnabled) {
+				parser = new PhoneticParser ();
+			}
 
 			if (Shift != null) {
 				Shift.TouchUpInside += ( sender, e) => {
 					UpdateShiftText (!isShiftPressed);
-					//UpdateKeyboardLayout ();
+					if (!IsPhoneticEnabled) {
+						UpdateKeyboardLayout ();
+					}
 				};
 			}
 		}
@@ -80,7 +92,7 @@ namespace Kannada
 		partial void BackspacePressed (NSObject sender)
 		{
 			TextDocumentProxy.DeleteBackward ();
-			if (parser != null) {
+			if (IsPhoneticEnabled) {
 				parser.ResetConsonantFlag ();
 			}
 		}
@@ -88,7 +100,7 @@ namespace Kannada
 		partial void ReturnPressed (NSObject sender)
 		{
 			TextDocumentProxy.InsertText ("\n");
-			if (parser != null) {
+			if (IsPhoneticEnabled) {
 				parser.PreviousConsonantFlag = 0;
 			}
 		}
@@ -96,7 +108,7 @@ namespace Kannada
 		partial void SpacePressed (NSObject sender)
 		{
 			TextDocumentProxy.InsertText (" ");
-			if (parser != null) {
+			if (IsPhoneticEnabled) {
 				parser.PreviousConsonantFlag = 0;
 			}
 		}
@@ -121,6 +133,12 @@ namespace Kannada
 			}
 			TextDocumentProxy.InsertText (unicode.Char);
 			UpdateShiftText (false);
+
+			UIView.Animate (0.2, () => {
+				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), 2f, 2f);
+			}, () => {
+				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), (nfloat)1f, (nfloat)1f);
+			});
 		}
 
 		partial void KeyPress (NSObject sender)
@@ -154,15 +172,7 @@ namespace Kannada
 			});
 		}
 
-		public override void TextWillChange (NSObject textInput)
-		{
-			// The app is about to change the document's contents. Perform any preparation here.
-		}
 
-		public override void TextDidChange (NSObject textInput)
-		{
-			// 
-		}
 
 		PhoneticParser parser;
 		bool isShiftPressed;
