@@ -47,6 +47,9 @@ namespace Kannada
 
 		[Action ("SpacePressed:")]
 		partial void SpacePressed (Foundation.NSObject sender);
+
+		[Action ("ToggleIndic:")]
+		partial void ToggleIndic (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

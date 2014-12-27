@@ -145,11 +145,12 @@
 		<unicode>0CB3</unicode>
 		<consonant>1</consonant>
 	</pattern>
-	<!--
-		<pattern> <char>q</char> <unicode>0C9F</unicode>
+
+		<pattern> 
+		<char>q</char> <unicode>0C9F</unicode>
 		<consonant>1</consonant> </pattern> <pattern> <char>Q</char>
 		<unicode>0CA0</unicode> <consonant>1</consonant> </pattern>
-	-->
+
 	<pattern>
 		<char>w</char>
 		<unicode>0CB5</unicode>

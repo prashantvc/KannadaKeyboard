@@ -41,7 +41,7 @@ namespace Kannada
 			if (Shift != null) {
 				Shift.TouchUpInside += ( sender, e) => {
 					UpdateShiftText (!isShiftPressed);
-					UpdateKeyboardLayout ();
+					//UpdateKeyboardLayout ();
 				};
 			}
 		}
@@ -67,8 +67,9 @@ namespace Kannada
 		void UpdateShiftText (bool ispressed)
 		{
 			isShiftPressed = ispressed;
-			//Shift.SetTitle (ispressed ? "S" : "s", UIControlState.Normal);
-			Shift.BackgroundColor = ispressed ? UIColor.GroupTableViewBackgroundColor : UIColor.White;
+
+			Shift.BackgroundColor = ispressed ? buttonTextColor : UIColor.White;
+			Shift.SetTitleColor (ispressed ? UIColor.White : buttonTextColor, UIControlState.Normal);
 		}
 
 		partial void ChangeKeyboardPressed (NSObject sender)
@@ -80,7 +81,7 @@ namespace Kannada
 		{
 			TextDocumentProxy.DeleteBackward ();
 			if (parser != null) {
-				parser.ResetConsonantFlag();
+				parser.ResetConsonantFlag ();
 			}
 		}
 
@@ -104,6 +105,11 @@ namespace Kannada
 		{
 			var button = sender as UIButton;
 			var text = button.Title (UIControlState.Normal);
+
+			if (!isShiftPressed) {
+				text = text.ToLowerInvariant ();
+			}
+
 			var unicode = parser.GetPattern (text);
 			Console.WriteLine (unicode);
 			for (int i = 0; i < unicode.DeletePosition; i++) {
@@ -114,6 +120,7 @@ namespace Kannada
 				return;
 			}
 			TextDocumentProxy.InsertText (unicode.Char);
+			UpdateShiftText (false);
 		}
 
 		partial void KeyPress (NSObject sender)
@@ -159,6 +166,9 @@ namespace Kannada
 
 		PhoneticParser parser;
 		bool isShiftPressed;
+
+		UIColor buttonTextColor = UIColor.FromRGBA (0.196f, 0.3098f, 0.52f, 1f);
+		// [UIColor colorWithRed:.196 green:0.3098 blue:0.52 alpha:1.0];
 
 		string[] row1titles = { "#", "್ರ", "ರ್", "ಜ್ಞ", "ತ್ರ", "ಕ್ಷ", "ಶ್ರ", "(", ")", "ಃ", "ಋ" };
 		string[] row2titles = { "ಔ", "ಐ", "ಆ", "ಈ", "ಊ", "ಭ", "ಙ", "ಘ", "ಧ", "ಝ", "ಢ" };
