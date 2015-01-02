@@ -166,10 +166,8 @@ namespace Kannada
 				}
 			}
 
-			AnimateButton(button)
+			AnimateButton(button);
 		}
-
-
 
 		PhoneticParser parser;
 		bool isShiftPressed;
