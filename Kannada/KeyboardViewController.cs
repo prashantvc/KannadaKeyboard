@@ -120,33 +120,33 @@ namespace Kannada
 			var button = sender as UIButton;
 			var text = button.Title (UIControlState.Normal);
 
-			if (!isShiftPressed) {
-				text = text.ToLowerInvariant ();
-			}
+			text = isShiftPressed ? text : text.ToLowerInvariant ();
 
-			var unicode = parser.GetPattern (text);
-			Console.WriteLine (unicode);
+			var unicode = isEnglishEnabled ? new KeyboardEvent (text, 0) : parser.GetPattern (text);
+
 			for (int i = 0; i < unicode.DeletePosition; i++) {
 				TextDocumentProxy.DeleteBackward ();
 			}
 
 			if (parser.AFlag) {
 				parser.AFlag = false;
-				AnimateButton (button);
-				return;
+				unicode.Char = string.Empty;
 			}
 
 			TextDocumentProxy.InsertText (unicode.Char);
 			UpdateShiftText (false);
-
 			AnimateButton (button);
+		}
+
+		void EnterSymbol(UIButton button){
+
 		}
 
 		static void AnimateButton (UIButton button)
 		{
-			UIView.Animate (0.2, () =>  {
+			UIView.Animate (0.1, () => {
 				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), 2f, 2f);
-			}, () =>  {
+			}, () => {
 				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), (nfloat)1f, (nfloat)1f);
 			});
 		}
@@ -166,11 +166,18 @@ namespace Kannada
 				}
 			}
 
-			AnimateButton(button);
+			AnimateButton (button);
+		}
+
+		partial void ToggleIndic (NSObject sender)
+		{
+			isEnglishEnabled = !isEnglishEnabled;
+			ToggleLanguage.SetTitle (isEnglishEnabled ? "ಅ" : "EN", UIControlState.Normal);
 		}
 
 		PhoneticParser parser;
 		bool isShiftPressed;
+		bool isEnglishEnabled;
 
 		UIColor buttonTextColor = UIColor.FromRGBA (0.196f, 0.3098f, 0.52f, 1f);
 
@@ -183,6 +190,9 @@ namespace Kannada
 		string[] normalRow2 =	{ "ೌ", "ೈ", "ಾ", "ೀ", "ೂ", "ಬ", "ಹ", "ಗ", "ದ", "ಜ", "ಡ" };
 		string[] normalRow3 = { "ೋ", "ೇ", "್", "ಿ", "ು", "ಪ", "ರ", "ಕ", "ತ", "ಚ", "ಟ" };
 		string[] normalRow4 = { "s", "ೆ", "ಂ", "ಮ", "ನ", "ವ", "ಲ", "ಸ", "ಯ", "ೃ", "b" };
+
+		string[] phoneticNumber = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
+		string[] phoneticSymbol = { "!", "@", "#", "₹", "&", "*", "(", ")", "-", "."};
 
 	}
 }

@@ -51,7 +51,7 @@ namespace Kannada
 			}
 		}
 
-		public void ResetConsonantFlag()
+		public void ResetConsonantFlag ()
 		{
 			PreviousConsonantFlag = PreviousConsonantFlaglog;
 		}
@@ -70,7 +70,7 @@ namespace Kannada
 			if (PreviousConsonantFlag == 1
 			    && CurrentConsonantFlag == 0) {
 
-				kEvent.SetData(patternNode.Unicode2, 1);
+				kEvent.SetData (patternNode.Unicode2, 1);
 				AFlag = pattern == "a";
 			} else {
 				kEvent.SetData (patternNode.Unicode, 0);
@@ -150,8 +150,11 @@ namespace Kannada
 	public class Pattern
 	{
 		public string Char { get; set; }
+
 		public string Unicode { get; set; }
+
 		public int Consonant { get; set; }
+
 		public string Unicode2 { get; set; }
 	}
 
@@ -159,7 +162,7 @@ namespace Kannada
 	{
 		public string Char {
 			get;
-			 set;
+			set;
 		}
 
 		public int DeletePosition {
@@ -167,9 +170,21 @@ namespace Kannada
 			private set;
 		}
 
-		public void SetData(string character, int deletePosition){
+		public void SetData (string character, int deletePosition)
+		{
 			Char = character;
 			DeletePosition = deletePosition;
+		}
+
+		public KeyboardEvent (string character, int deletePosition)
+		{
+			Char = character;
+			DeletePosition = deletePosition;
+		}
+
+		public KeyboardEvent ()
+		{
+			
 		}
 
 		public override string ToString ()

@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardViewController">
             <connections>
+                <outlet property="Row1" destination="kOO-DO-J6L" id="XfS-Vs-PFb"/>
                 <outlet property="Shift" destination="tPc-nE-skb" id="yB0-Za-AaR"/>
+                <outlet property="ToggleLanguage" destination="rd1-XD-Yvq" id="D8y-lf-diY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -592,8 +594,11 @@
                             <rect key="frame" x="0.0" y="175.5" width="320" height="44.5"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw0-uC-dAK">
-                                    <rect key="frame" x="1" y="1" width="30" height="42"/>
+                                    <rect key="frame" x="1" y="1" width="35" height="42"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="ya9-Ch-bin"/>
+                                    </constraints>
                                     <state key="normal" title="🌐">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -602,7 +607,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rd1-XD-Yvq">
-                                    <rect key="frame" x="33" y="1" width="30" height="42.5"/>
+                                    <rect key="frame" x="38" y="1" width="35" height="42.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" title="EN">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -612,10 +617,10 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7G-Gr-Obr">
-                                    <rect key="frame" x="65" y="1" width="160" height="42.5"/>
+                                    <rect key="frame" x="75" y="1" width="152" height="42.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="160" id="64G-ng-qYx"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="64G-ng-qYx"/>
                                     </constraints>
                                     <state key="normal" title="space">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -625,8 +630,11 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJz-LU-jeD">
-                                    <rect key="frame" x="227" y="1" width="92" height="42.5"/>
+                                    <rect key="frame" x="229" y="1" width="90" height="42.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="90" id="tdq-ee-Cym"/>
+                                    </constraints>
                                     <state key="normal" title="return">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>

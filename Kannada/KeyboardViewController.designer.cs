@@ -30,6 +30,9 @@ namespace Kannada
 		[Outlet]
 		UIKit.UIButton Shift { get; set; }
 
+		[Outlet]
+		UIKit.UIButton ToggleLanguage { get; set; }
+
 		[Action ("BackspacePressed:")]
 		partial void BackspacePressed (Foundation.NSObject sender);
 
@@ -81,6 +84,11 @@ namespace Kannada
 			if (Shift != null) {
 				Shift.Dispose ();
 				Shift = null;
+			}
+
+			if (ToggleLanguage != null) {
+				ToggleLanguage.Dispose ();
+				ToggleLanguage = null;
 			}
 		}
 	}
