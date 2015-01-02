@@ -1,14 +1,13 @@
 ﻿<Properties StartupItem="KannadaKeyboard/KannadaKeyboard.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Prashant’s iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="KannadaKeyboard/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Kannada/Info.plist">
     <Files>
-      <File FileName="KannadaKeyboard/AppDelegate.cs" Line="28" Column="28" />
+      <File FileName="Kannada/Info.plist" />
+      <File FileName="Kannada/PhoneticParser.cs" Line="3" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/prashantvc/Work/KannadaKeyboard/KannadaKeyboard/AppDelegate.cs" line="44" column="14" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

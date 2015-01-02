@@ -119,5 +119,6 @@
     <BundleResource Include="Resources\kan_phonetic.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
+    <BundleResource Include="Resources\.DS_Store" />
   </ItemGroup>
 </Project>

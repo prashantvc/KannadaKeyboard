@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 using Foundation;
 using UIKit;
@@ -27,6 +28,12 @@ namespace Kannada
 			SetRemainging ();
 		}
 
+		void UpdatePhoneticLayout()
+		{
+
+			SetKeyTitle (Row1, isShiftPressed ? phoneticSymbol : phoneticNumber);
+		}
+
 		bool IsPhoneticEnabled{ get; set; }
 
 		public override void ViewDidLoad ()
@@ -53,7 +60,9 @@ namespace Kannada
 			if (Shift != null) {
 				Shift.TouchUpInside += ( sender, e) => {
 					UpdateShiftText (!isShiftPressed);
-					if (!IsPhoneticEnabled) {
+					if (IsPhoneticEnabled) {
+						UpdatePhoneticLayout ();
+					} else {
 						UpdateKeyboardLayout ();
 					}
 				};
@@ -74,7 +83,6 @@ namespace Kannada
 			int i = 0;
 			foreach (UIButton item in row) {
 				item.SetTitle (titles [i++], UIControlState.Normal);
-				Console.WriteLine ("{0} {1}", i, item.Title (UIControlState.Normal));
 			}
 		}
 
@@ -118,8 +126,14 @@ namespace Kannada
 		partial void PhonaticKeyPress (NSObject sender)
 		{
 			var button = sender as UIButton;
-			var text = button.Title (UIControlState.Normal);
 
+			bool canReturn = EnterSymbol(button);
+
+			if (canReturn) {
+				return;
+			}
+
+			var text = button.Title (UIControlState.Normal);
 			text = isShiftPressed ? text : text.ToLowerInvariant ();
 
 			var unicode = isEnglishEnabled ? new KeyboardEvent (text, 0) : parser.GetPattern (text);
@@ -135,11 +149,21 @@ namespace Kannada
 
 			TextDocumentProxy.InsertText (unicode.Char);
 			UpdateShiftText (false);
+			UpdatePhoneticLayout();
 			AnimateButton (button);
 		}
 
-		void EnterSymbol(UIButton button){
+		bool EnterSymbol(UIButton button){
+			var text = button.Title (UIControlState.Normal);
+			bool isSymbol = phoneticSymbol.Contains (text);
 
+			if (!isSymbol) {
+				return false;
+			}
+
+			TextDocumentProxy.InsertText (text);
+			AnimateButton (button);
+			return true;
 		}
 
 		static void AnimateButton (UIButton button)
