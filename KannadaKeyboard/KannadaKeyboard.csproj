@@ -54,6 +54,7 @@
     </IpaPackageName>
     <MtouchI18n>
     </MtouchI18n>
+    <CodesignProvision>b617d4e2-73ca-4e68-b267-3a3b8afbc15c</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -65,6 +66,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignProvision>b617d4e2-73ca-4e68-b267-3a3b8afbc15c</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>full</DebugType>
@@ -117,6 +119,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\PrivatePolicy.html" />
+    <BundleResource Include="Resources\instructions.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -125,13 +129,13 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="KannadaKeyboardViewController.cs" />
-    <Compile Include="KannadaKeyboardViewController.designer.cs">
-      <DependentUpon>KannadaKeyboardViewController.cs</DependentUpon>
+    <Compile Include="WebElement.cs" />
+    <Compile Include="WebElement.designer.cs">
+      <DependentUpon>WebElement.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="WebElement.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

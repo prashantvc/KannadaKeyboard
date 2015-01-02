@@ -20,6 +20,9 @@ namespace KannadaKeyboard
 		MyRadioElement phonetic;
 		NSUserDefaults defaults;
 
+		DialogViewController dv;
+		WebElement webElement;
+
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
 			defaults = new NSUserDefaults ("group.prashantvc.KannadaKeyboard", NSUserDefaultsType.SuiteName);
@@ -28,27 +31,42 @@ namespace KannadaKeyboard
 			defaults.Synchronize ();
 			var section = new Section ("Keyboard Type");
 
+			webElement = new WebElement ();
+
 			var root = new RootElement ("ಕಿಲೀಮಣಿ ") { 
 				new Section ("To Enable Keyboard") {
-					new MultilineElement ("Go to Settings > General > \nKeyboard > Keyboards > \nAdd New Keyboard and Tap Kannada")
+					new StyledStringElement ("Instructions", () => {
+						webElement.SetPageTitle ("Instructions");
+						webElement.HtmlFile = "instructions";
+						dv.NavigationController.PushViewController (webElement, true);
+					}) { Accessory = UITableViewCellAccessory.DisclosureIndicator }
 				},
 				section,
 				new Section {
-					new HtmlElement ("Privacy Policy", "http://prashantvc.com/private_policy.html")
+					new StyledStringElement ("Privacy Policy", () => {
+						webElement.SetPageTitle ("Privacy Policy");
+						webElement.HtmlFile = "PrivatePolicy";
+						dv.NavigationController.PushViewController (webElement, true);
+					}) { 
+						Accessory = UITableViewCellAccessory.DisclosureIndicator 
+					}
 				}
 			};
 
 			inscript = new MyRadioElement ("Inscript", "type", defaults);
 			phonetic = new MyRadioElement ("Phonetic (ಫೊನೆಟಿಕ್)", "type", defaults);
 
-			section.Add (new RootElement ("Type", new RadioGroup ("type", 0)) {
+			var obj = (NSNumber)defaults.ValueForKey (new NSString ("use_phonetic"));
+			bool isPhoneticEnabled = (bool)obj;
+
+			section.Add (new RootElement ("Type", new RadioGroup ("type", isPhoneticEnabled ? 1 : 0)) {
 				new Section {
 					inscript,
 					phonetic
 				}
 			});
 
-			var dv = new DialogViewController (root) {
+			dv = new DialogViewController (root) {
 				Autorotate = true
 			};
 			navigation = new UINavigationController ();
@@ -60,8 +78,6 @@ namespace KannadaKeyboard
 
 			return true;
 		}
-		
-
 	}
 
 	public class MyRadioElement:RadioElement

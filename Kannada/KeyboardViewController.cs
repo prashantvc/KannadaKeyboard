@@ -34,13 +34,15 @@ namespace Kannada
 			base.ViewDidLoad ();
 
 			var defaults = new NSUserDefaults ("group.prashantvc.KannadaKeyboard", NSUserDefaultsType.SuiteName);
-			var obj = (NSNumber)defaults.ValueForKey (new NSString ("use_phonetic"));
-			IsPhoneticEnabled = (bool)obj;
+			var obj = defaults.ValueForKey (new NSString ("use_phonetic"));
+			Console.WriteLine ("Use Phonetic {0}", obj);
+
+			IsPhoneticEnabled = (bool)((NSNumber)obj);
 
 			Console.WriteLine ("Is phonetic: {0}", IsPhoneticEnabled);
 
 			var nibfile = IsPhoneticEnabled ? "KanndaPhoneticView" : "KeyboardView";
-			var nib = UINib.FromName (nibfile, null); //UINib("KeyboardView", bundle: nil)
+			var nib = UINib.FromName (nibfile, null); 
 			var objects = nib.Instantiate (this, null);
 			View = objects [0] as UIView;
 
@@ -127,16 +129,24 @@ namespace Kannada
 			for (int i = 0; i < unicode.DeletePosition; i++) {
 				TextDocumentProxy.DeleteBackward ();
 			}
+
 			if (parser.AFlag) {
 				parser.AFlag = false;
+				AnimateButton (button);
 				return;
 			}
+
 			TextDocumentProxy.InsertText (unicode.Char);
 			UpdateShiftText (false);
 
-			UIView.Animate (0.2, () => {
+			AnimateButton (button);
+		}
+
+		static void AnimateButton (UIButton button)
+		{
+			UIView.Animate (0.2, () =>  {
 				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), 2f, 2f);
-			}, () => {
+			}, () =>  {
 				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), (nfloat)1f, (nfloat)1f);
 			});
 		}
@@ -155,21 +165,8 @@ namespace Kannada
 					UpdateKeyboardLayout ();
 				}
 			}
-			 
 
-//			UIView.animateWithDuration(0.2, animations: {
-//				button.transform = CGAffineTransformScale(CGAffineTransformIdentity, 2.0, 2.0)
-//			}, completion: {(_) -&gt; Void in
-//				button.transform =
-//					CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
-//				})
-
-
-			UIView.Animate (0.2, () => {
-				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), 2f, 2f);
-			}, () => {
-				button.Transform = CGAffineTransform.Scale (CGAffineTransform.MakeIdentity (), (nfloat)1f, (nfloat)1f);
-			});
+			AnimateButton(button)
 		}
 
 
@@ -178,7 +175,6 @@ namespace Kannada
 		bool isShiftPressed;
 
 		UIColor buttonTextColor = UIColor.FromRGBA (0.196f, 0.3098f, 0.52f, 1f);
-		// [UIColor colorWithRed:.196 green:0.3098 blue:0.52 alpha:1.0];
 
 		string[] row1titles = { "#", "್ರ", "ರ್", "ಜ್ಞ", "ತ್ರ", "ಕ್ಷ", "ಶ್ರ", "(", ")", "ಃ", "ಋ" };
 		string[] row2titles = { "ಔ", "ಐ", "ಆ", "ಈ", "ಊ", "ಭ", "ಙ", "ಘ", "ಧ", "ಝ", "ಢ" };
