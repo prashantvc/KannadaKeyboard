@@ -2,6 +2,7 @@
 using Foundation;
 using UIKit;
 using MonoTouch.Dialog;
+using Xamarin;
 
 namespace KannadaKeyboard
 {
@@ -29,6 +30,9 @@ namespace KannadaKeyboard
 			var dictionary = NSDictionary.FromObjectsAndKeys (new object[]{ false }, new object[]{ "use_phonetic" });
 			defaults.RegisterDefaults (dictionary);
 			defaults.Synchronize ();
+
+			Insights.Initialize ("abc0939e38294cf24ff181959a2a33441215dc7b");
+
 			var section = new Section ("Keyboard Type");
 
 			webElement = new WebElement ();
@@ -92,7 +96,10 @@ namespace KannadaKeyboard
 		public override void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath indexPath)
 		{
 			base.Selected (dvc, tableView, indexPath);
-			defaults.SetBool (indexPath.Row == 1, "use_phonetic");
+			bool phonetic = indexPath.Row == 1;
+			defaults.SetBool (phonetic, "use_phonetic");
+
+			Insights.Track ("use_phonetic", "enabled", phonetic.ToString());
 		}
 	}
 
