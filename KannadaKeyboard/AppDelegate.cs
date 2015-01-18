@@ -17,20 +17,13 @@ namespace KannadaKeyboard
 		UINavigationController navigation;
 		UIWindow window;
 
-		MyRadioElement inscript;
-		MyRadioElement phonetic;
-		NSUserDefaults defaults;
+		RadioElement phonetic;
 
 		DialogViewController dv;
 		WebElement webElement;
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
-			defaults = new NSUserDefaults ("group.prashantvc.KannadaKeyboard", NSUserDefaultsType.SuiteName);
-			var dictionary = NSDictionary.FromObjectsAndKeys (new object[]{ false }, new object[]{ "use_phonetic" });
-			defaults.RegisterDefaults (dictionary);
-			defaults.Synchronize ();
-
 			Insights.Initialize ("abc0939e38294cf24ff181959a2a33441215dc7b");
 
 			var section = new Section ("Keyboard Type");
@@ -57,15 +50,12 @@ namespace KannadaKeyboard
 				}
 			};
 
-			inscript = new MyRadioElement ("Inscript", "type", defaults);
-			phonetic = new MyRadioElement ("Phonetic (ಫೊನೆಟಿಕ್)", "type", defaults);
+			//inscript = new RadioElement ("Inscript", "type", defaults);
+			phonetic = new RadioElement ("Phonetic (ಫೊನೆಟಿಕ್)", "type");
 
-			var obj = (NSNumber)defaults.ValueForKey (new NSString ("use_phonetic"));
-			bool isPhoneticEnabled = (bool)obj;
 
-			section.Add (new RootElement ("Type", new RadioGroup ("type", isPhoneticEnabled ? 1 : 0)) {
-				new Section {
-					inscript,
+			section.Add (new RootElement ("Type", new RadioGroup ("type", 0)) {
+				new Section ("More to come...") {
 					phonetic
 				}
 			});
@@ -81,25 +71,6 @@ namespace KannadaKeyboard
 			window.AddSubview (navigation.View);
 
 			return true;
-		}
-	}
-
-	public class MyRadioElement:RadioElement
-	{
-		readonly NSUserDefaults defaults;
-
-		public MyRadioElement (string caption, string group, NSUserDefaults defaults) : base (caption, group)
-		{
-			this.defaults = defaults;
-		}
-
-		public override void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath indexPath)
-		{
-			base.Selected (dvc, tableView, indexPath);
-			bool phonetic = indexPath.Row == 1;
-			defaults.SetBool (phonetic, "use_phonetic");
-
-			Insights.Track ("use_phonetic", "enabled", phonetic.ToString());
 		}
 	}
 

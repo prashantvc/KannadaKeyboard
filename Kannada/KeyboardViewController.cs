@@ -28,28 +28,23 @@ namespace Kannada
 			SetRemainging ();
 		}
 
-		void UpdatePhoneticLayout()
+		void UpdatePhoneticLayout ()
 		{
 
 			SetKeyTitle (Row1, isShiftPressed ? phoneticSymbol : phoneticNumber);
 		}
 
-		bool IsPhoneticEnabled{ get; set; }
+		bool IsPhoneticEnabled {
+			get {
+				return true;
+			}
+		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
-			var defaults = new NSUserDefaults ("group.prashantvc.KannadaKeyboard", NSUserDefaultsType.SuiteName);
-			var obj = defaults.ValueForKey (new NSString ("use_phonetic"));
-			Console.WriteLine ("Use Phonetic {0}", obj);
-
-			IsPhoneticEnabled = (bool)((NSNumber)obj);
-
-			Console.WriteLine ("Is phonetic: {0}", IsPhoneticEnabled);
-
-			var nibfile = IsPhoneticEnabled ? "KanndaPhoneticView" : "KeyboardView";
-			var nib = UINib.FromName (nibfile, null); 
+			var nib = UINib.FromName ("KanndaPhoneticView", null); 
 			var objects = nib.Instantiate (this, null);
 			View = objects [0] as UIView;
 
@@ -127,7 +122,7 @@ namespace Kannada
 		{
 			var button = sender as UIButton;
 
-			bool canReturn = EnterSymbol(button);
+			bool canReturn = EnterSymbol (button);
 
 			if (canReturn) {
 				return;
@@ -149,11 +144,12 @@ namespace Kannada
 
 			TextDocumentProxy.InsertText (unicode.Char);
 			UpdateShiftText (false);
-			UpdatePhoneticLayout();
+			UpdatePhoneticLayout ();
 			AnimateButton (button);
 		}
 
-		bool EnterSymbol(UIButton button){
+		bool EnterSymbol (UIButton button)
+		{
 			var text = button.Title (UIControlState.Normal);
 			bool isSymbol = phoneticSymbol.Contains (text);
 
@@ -215,8 +211,8 @@ namespace Kannada
 		string[] normalRow3 = { "ೋ", "ೇ", "್", "ಿ", "ು", "ಪ", "ರ", "ಕ", "ತ", "ಚ", "ಟ" };
 		string[] normalRow4 = { "s", "ೆ", "ಂ", "ಮ", "ನ", "ವ", "ಲ", "ಸ", "ಯ", "ೃ", "b" };
 
-		string[] phoneticNumber = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
-		string[] phoneticSymbol = { "!", "@", "#", "₹", "&", "*", "(", ")", "-", "."};
+		string[] phoneticNumber = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+		string[] phoneticSymbol = { "!", "@", "#", "₹", "&", "*", "(", ")", "-", "." };
 
 	}
 }
