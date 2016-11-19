@@ -54,7 +54,8 @@
     </IpaPackageName>
     <MtouchI18n>
     </MtouchI18n>
-    <CodesignProvision>83f999dc-4231-4d6a-b0a7-cee0c5ad295d</CodesignProvision>
+    <CodesignProvision>6c6b0835-ec61-4814-95ce-fd7cbd93a9cb</CodesignProvision>
+    <MtouchExtraArgs>--dsym=true</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -109,10 +110,10 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Xamarin.Insights">
-      <HintPath>..\packages\Xamarin.Insights.1.8.3\lib\Xamarin.iOS10\Xamarin.Insights.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Insights.1.11.2\lib\Xamarin.iOS10\Xamarin.Insights.dll</HintPath>
     </Reference>
     <Reference Include="PLCrashReporterUnifiedBinding">
-      <HintPath>..\packages\Xamarin.Insights.1.8.3\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Insights.1.11.2\lib\Xamarin.iOS10\PLCrashReporterUnifiedBinding.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -149,14 +150,12 @@
     <InterfaceDefinition Include="WebElement.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Insights.1.11.2\build\Xamarin.iOS10\Xamarin.Insights.targets" Condition="Exists('..\packages\Xamarin.Insights.1.11.2\build\Xamarin.iOS10\Xamarin.Insights.targets')" />
   <ItemGroup>
     <ProjectReference Include="..\Kannada\Kannada.csproj">
       <Project>{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}</Project>
       <Name>Kannada</Name>
       <IsAppExtension>True</IsAppExtension>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
 </Project>

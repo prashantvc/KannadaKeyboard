@@ -11,6 +11,7 @@ namespace Kannada
 	{
 		public KeyboardViewController (IntPtr handle) : base (handle)
 		{
+			
 		}
 
 	
@@ -43,6 +44,7 @@ namespace Kannada
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
 
 			var nib = UINib.FromName ("KanndaPhoneticView", null); 
 			var objects = nib.Instantiate (this, null);

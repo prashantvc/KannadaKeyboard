@@ -1,13 +1,22 @@
-﻿<Properties StartupItem="KannadaKeyboard/KannadaKeyboard.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
+﻿<Properties StartupConfiguration="{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.ItemProperties.KannadaKeyboard PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Kannada/KeyboardViewController.cs">
     <Files>
-      <File FileName="Kannada/KeyboardViewController.cs" Line="8" Column="8" />
+      <File FileName="Kannada/KeyboardViewController.cs" Line="47" Column="4" />
+      <File FileName="Kannada/Entitlements.plist" />
       <File FileName="Kannada/Info.plist" />
+      <File FileName="KannadaKeyboard/Info.plist" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="AppStore|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/jorgenteunis/Projects/Apps/KeenOnApps.Appsotheek.AfsprakenApp/AfsprakenAppDBVersion/MijnFysioApp.MD.Core/BusinessLayer/Managers/ExerciseResultManager.cs" line="18" column="1" />
+      <Breakpoint file="/Users/jorgenteunis/Projects/Apps/KeenOnApps.Appsotheek.AfsprakenApp/AfsprakenAppDBVersion/MijnFysioApp.MD.Core/BusinessLayer/AuthenticationManager.cs" line="62" column="1" />
+      <Breakpoint file="/Users/jorgenteunis/Projects/Apps/KeenOnApps.Appsotheek.AfsprakenApp/AfsprakenAppDBVersion/MijnFysioApp.MT/Views/PincodeLostView.cs" line="96" column="1" />
+      <Breakpoint file="/Users/jorgenteunis/Projects/Apps/KeenOnApps.Appsotheek.AfsprakenApp/AfsprakenAppDBVersion/MijnFysioApp.MT/Views/PincodeLostView.cs" line="111" column="1" />
+      <Breakpoint file="/Users/prashantvc/Work/KannadaKeyboard/Kannada/KeyboardViewController.cs" line="45" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
