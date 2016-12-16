@@ -2,7 +2,10 @@
 using Foundation;
 using UIKit;
 using MonoTouch.Dialog;
-using Xamarin;
+
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace KannadaKeyboard
 {
@@ -24,7 +27,10 @@ namespace KannadaKeyboard
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
-			Insights.Initialize ("abc0939e38294cf24ff181959a2a33441215dc7b");
+
+			MobileCenter.Start ("3e5e305a-d1b1-405a-9233-9b917f658437",
+					typeof (Analytics), typeof (Crashes));
+
 
 			var section = new Section ("Keyboard Type");
 
