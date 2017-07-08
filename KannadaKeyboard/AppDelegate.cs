@@ -1,11 +1,9 @@
-﻿
+﻿﻿
 using Foundation;
 using UIKit;
 using MonoTouch.Dialog;
 
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
-using Microsoft.Azure.Mobile.Crashes;
+
 
 namespace KannadaKeyboard
 {
@@ -27,11 +25,6 @@ namespace KannadaKeyboard
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
-
-			MobileCenter.Start ("3e5e305a-d1b1-405a-9233-9b917f658437",
-					typeof (Analytics), typeof (Crashes));
-
-
 			var section = new Section ("Keyboard Type");
 
 			webElement = new WebElement ();
@@ -73,9 +66,8 @@ namespace KannadaKeyboard
 			navigation.PushViewController (dv, true);				
 
 			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			window.MakeKeyAndVisible ();
-			window.AddSubview (navigation.View);
-
+			window.RootViewController = navigation;
+            window.MakeKeyAndVisible ();
 			return true;
 		}
 	}

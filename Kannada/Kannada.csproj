@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{EE2C853D-36AF-4FDB-B1AD-8E90477E2198};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{EE2C853D-36AF-4FDB-B1AD-8E90477E2198};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Kannada</RootNamespace>
@@ -51,7 +51,6 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignProvision>f4fd5834-862c-4882-b430-b455d0c6529f</CodesignProvision>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchI18n>
     </MtouchI18n>
   </PropertyGroup>
@@ -66,7 +65,6 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignProvision>2d014434-f963-46db-b64d-b0d6702d4d1e</CodesignProvision>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchI18n>
     </MtouchI18n>
   </PropertyGroup>
@@ -126,6 +124,5 @@
     <BundleResource Include="Resources\kan_phonetic.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Resources\.DS_Store" />
   </ItemGroup>
 </Project>
