@@ -35,7 +35,10 @@ namespace KannadaKeyboard
 						webElement.SetPageTitle ("Instructions");
 						webElement.HtmlFile = "instructions";
 						dv.NavigationController.PushViewController (webElement, true);
-					}) { Accessory = UITableViewCellAccessory.DisclosureIndicator }
+					}) {
+                        Accessory = UITableViewCellAccessory.DisclosureIndicator,
+                        TextColor = UIColor.LabelColor
+                    }
 				},
 				section,
 				new Section {
@@ -44,8 +47,9 @@ namespace KannadaKeyboard
 						webElement.HtmlFile = "PrivatePolicy";
 						dv.NavigationController.PushViewController (webElement, true);
 					}) { 
-						Accessory = UITableViewCellAccessory.DisclosureIndicator 
-					}
+						Accessory = UITableViewCellAccessory.DisclosureIndicator ,
+                        TextColor = UIColor.LabelColor
+                    }
 				}
 			};
 
