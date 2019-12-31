@@ -46,7 +46,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
@@ -54,7 +54,7 @@
     </IpaPackageName>
     <MtouchI18n>
     </MtouchI18n>
-    <MtouchExtraArgs>--dsym=true</MtouchExtraArgs>
+    <MtouchExtraArgs>--dsym=true --mono:static</MtouchExtraArgs>
     <CodesignProvision>KKMainAppDev</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -95,13 +95,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignKey>iPhone Distribution</CodesignKey>
     <MtouchI18n>
     </MtouchI18n>
     <IpaPackageName>
     </IpaPackageName>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <MtouchExtraArgs>--mono:static</MtouchExtraArgs>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -121,11 +123,11 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%403x.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\kannada_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\PrivatePolicy.html" />
     <BundleResource Include="Resources\instructions.html" />
-    <BundleResource Include="Resources\Default-568h%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -150,5 +152,8 @@
       <Name>Kannada</Name>
       <IsAppExtension>True</IsAppExtension>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
 </Project>

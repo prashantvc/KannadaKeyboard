@@ -46,13 +46,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchI18n>
     </MtouchI18n>
     <CodesignProvision>KKExtensionDev</CodesignProvision>
+    <MtouchExtraArgs>--mono:static</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -88,17 +89,28 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchArch>ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
+    <MtouchExtraArgs>--mono:static</MtouchExtraArgs>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="Xamarin.iOS" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System">
+      <IncludeInPackage>false</IncludeInPackage>
+    </Reference>
+    <Reference Include="System.Xml">
+      <IncludeInPackage>false</IncludeInPackage>
+    </Reference>
+    <Reference Include="System.Core">
+      <IncludeInPackage>false</IncludeInPackage>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <IncludeInPackage>false</IncludeInPackage>
+    </Reference>
+    <Reference Include="Xamarin.iOS">
+      <IncludeInPackage>false</IncludeInPackage>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
