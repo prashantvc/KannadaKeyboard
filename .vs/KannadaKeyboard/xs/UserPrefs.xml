@@ -1,0 +1,38 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{7107CCF4-F027-46EF-B9C2-FD65761E9DAC}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="KannadaKeyboard/Info.plist" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="KannadaKeyboard" expanded="True">
+            <Node name="KannadaKeyboard" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="Assets.xcassets" selected="True" />
+              </Node>
+            </Node>
+            <Node name="KeyboardExtension" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.KannadaKeyboard PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.AF5B30CA-B4AE-4152-B7D3-E50BB7CECA48" />
+  <MonoDevelop.Ide.ItemProperties.KeyboardExtension>
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.KeyboardExtension>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/jorgenteunis/Projects/Apps/KeenOnApps.Appsotheek.AfsprakenApp/AfsprakenAppDBVersion/MijnFysioApp.MD.Core/BusinessLayer/Managers/ExerciseResultManager.cs" line="18" column="1" />
+      <Breakpoint file="/Users/jorgenteunis/Projects/Apps/KeenOnApps.Appsotheek.AfsprakenApp/AfsprakenAppDBVersion/MijnFysioApp.MD.Core/BusinessLayer/AuthenticationManager.cs" line="62" column="1" />
+      <Breakpoint file="/Users/jorgenteunis/Projects/Apps/KeenOnApps.Appsotheek.AfsprakenApp/AfsprakenAppDBVersion/MijnFysioApp.MT/Views/PincodeLostView.cs" line="96" column="1" />
+      <Breakpoint file="/Users/jorgenteunis/Projects/Apps/KeenOnApps.Appsotheek.AfsprakenApp/AfsprakenAppDBVersion/MijnFysioApp.MT/Views/PincodeLostView.cs" line="111" column="1" />
+      <Breakpoint file="/Users/prashantvc/repos/KannadaKeyboard/KeyboardExtension/KeyboardViewController.cs" relfile="KeyboardExtension/KeyboardViewController.cs" line="124" column="1" />
+      <Breakpoint file="/Users/prashantvc/repos/KannadaKeyboard/KeyboardExtension/KeyboardViewController.cs" relfile="KeyboardExtension/KeyboardViewController.cs" line="177" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

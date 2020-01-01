@@ -9,7 +9,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.1.3</string>
 	<key>CFBundleVersion</key>
-	<string>3.5</string>
+	<string>3.7</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -29,7 +29,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>XSAppIconAssets</key>
-	<string>Resources/Images.xcassets/AppIcons.appiconset</string>
+	<string>Resources/Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleName</key>
 	<string>Keelimane</string>
 	<key>UILaunchStoryboardName</key>

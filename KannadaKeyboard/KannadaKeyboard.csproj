@@ -113,19 +113,6 @@
     <Reference Include="MonoTouch.Dialog-1" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-29.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-29%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-29%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-40%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-40%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-76%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\kannada_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\PrivatePolicy.html" />
     <BundleResource Include="Resources\instructions.html" />
   </ItemGroup>
@@ -147,13 +134,35 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Kannada\Kannada.csproj">
-      <Project>{22A4A26A-78F1-49C4-8E9C-B2642FC58A49}</Project>
-      <Name>Kannada</Name>
-      <IsAppExtension>True</IsAppExtension>
+    <ProjectReference Include="..\KeyboardExtension\KeyboardExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{7275FB40-591A-4F45-970A-374690F3A7D2}</Project>
+      <Name>KeyboardExtension</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\20.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\40.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\29.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\58.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\60.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\1024.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\76.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\167.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\72.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\100.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\114.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\120.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\180.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\57.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\80.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\87.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\50.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\144.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\152.png" />
   </ItemGroup>
 </Project>
